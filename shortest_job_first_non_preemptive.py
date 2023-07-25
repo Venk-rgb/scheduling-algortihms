@@ -1,7 +1,7 @@
 from Process import get_process_details, display_process_table
 
 
-def sjf(process_list):
+def shortest_job_first_non_preemptive(process_list):
     process_list.sort(key=lambda x: x.arrival_time, reverse=False)
     time = 0
     completion_time = 0
@@ -24,4 +24,4 @@ def sjf(process_list):
 
 
 process_list = get_process_details()
-sjf(process_list)
+shortest_job_first_non_preemptive(process_list)

@@ -1,7 +1,7 @@
 from Process import display_process_table, get_process_details
 
 
-def fcfs(process_list):
+def first_come_first_serve(process_list):
     process_list.sort(key=lambda x: x.arrival_time, reverse=False)
     completion_time = 0
     time = 0
@@ -23,4 +23,4 @@ def fcfs(process_list):
 
 process_list = get_process_details()
 
-fcfs(process_list)
+first_come_first_serve(process_list)
