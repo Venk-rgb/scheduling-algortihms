@@ -8,6 +8,7 @@ class Process:
         self.priority = priority
         self.wait_time = 0
         self.is_scheduled = False
+        self.is_picked = False
 
 
 def display_process_table(process_list):
@@ -39,7 +40,7 @@ def get_process_details():
     number_of_processes = int(input("Enter number of processes: "))
     process_list = []
     for i in range(number_of_processes):
-        pid = int(input("Enter process id (starting from 0): "))
+        pid = int(input("Enter process id: "))
         arrival_time = int(input("Enter arrival time: "))
         burst_time = int(input("Enter burst time: "))
         process_list.append(Process(pid, arrival_time, burst_time, 0))
