@@ -14,6 +14,8 @@ class Process:
 def display_process_table(process_list):
     process_list.sort(key=lambda x: x.pid, reverse=False)
     print("PID  AT  BT  CT  TAT  WT")
+    total_wait_time = 0
+    total_turn_around_time = 0
     for i in range(len(process_list)):
         print("P" + str(process_list[i].pid), end="   ")
         print(process_list[i].arrival_time, end="   ")
@@ -21,6 +23,10 @@ def display_process_table(process_list):
         print(process_list[i].completion_time, end="   ")
         print(process_list[i].turn_around_time, end="  ")
         print(process_list[i].wait_time)
+        total_wait_time += process_list[i].wait_time
+        total_turn_around_time += process_list[i].turn_around_time
+    print("Average wait time = ", (total_wait_time / len(process_list)))
+    print("Average turn around time = ", (total_turn_around_time / len(process_list)))
 
 
 def display_process_table_with_priority(process_list):
